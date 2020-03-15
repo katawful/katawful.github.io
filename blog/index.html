@@ -1,0 +1,16 @@
+---
+layout: posts
+classes: wide
+sidebar:
+  title: "Posts"
+  nav: nav
+---
+<h4>My blog!</h4>
+This is all of the stuff I write up.
+<br>
+{% for post in site.posts %}
+<!--	<br>
+	<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+	<h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>-->
+	{% include archive-single.html %}
+{% endfor %}

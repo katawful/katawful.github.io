@@ -1,0 +1,34 @@
+# main links
+main:
+  - title: "Blog"
+    url: /blog/
+  - title: "About"
+    url: /about/
+  - title: "Contact"
+    url: /contact/
+
+# blog sidebar
+nav:
+        - title: "Linux"
+          url: /category/linux/
+        - title: "Update"
+          url: /category/update/
+
+# category sidebar
+back:
+        - title: "Linux"
+          url: /category/linux/
+        - title: "Updates"
+          url: /category/update/
+        - tile: "Back"
+          url: /blog/
+
+# linux post sidebar
+linux:
+        - title: "Back"
+          url: /blog/
+
+# update post sidebar
+update:
+        - title: "Back"
+          url: /blog/

@@ -1,0 +1,9 @@
+---
+layout: single
+classes: wide
+---
+<div id="main" role="main">
+    {% for post in site.categories[page.tag] %}
+        {% include archive-single.html %}
+    {% endfor %}
+</div>

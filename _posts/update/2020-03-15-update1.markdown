@@ -1,0 +1,39 @@
+---
+layout: single
+title:  "Welcome to my blog!!!"
+excerpt: "A small taste of what's to come"
+sidebar:
+  title: "Similar Posts"
+  nav: update
+header:
+   teaser: /assets/images/generic-image.png
+date:   2020-03-15 13:41:25 -0400
+categories: update
+---
+<h2>Welcome to my blog</h2>
+
+I made this blog because I really needed a place to put my thoughts, ideas, and processes somewhere more readable than just a GitHub wiki.
+I also wanted a site that wasn't reliant on any one service, allowing me to switch hosts when I'm able to. Yeah this is reliant on GitHub atm, but if things go south I'll still have the site data.
+There are a lot of topics I wanna cover relating to Oblivion, WINE, shell scripting, and my workflows plus whatever else I can think of. The site is still kind of a work in progress,
+there's a lot I need to do still. 
+
+<h5>Oblivion/WINE Stuff</h5>
+Since I've been a Linux user for a while (see [this][firstpost] post for some background), I clearly can't just run Windows games like its nothing.
+WINE is a requirement. WINE is very good for playing older games, particularly mid-era DirectX 9 titles. The support is fantastic, [Gallium Nine][winenine] and 
+[DXVK][dxvk] give me essentially native performance, I can have unlimited installs and manage games very easily, and I don't have to worry about MicroSoft ruining
+compatibility. 
+
+However that doesn't extend to modding, which is where I spend most of my WINE management. 
+Most tools work fine, but if you're familiar with WINE/ProtonDB's ranking system, you'll quickly find that a lot of tools would have Gold or Silver ranks
+(Platinum being "runs out of the box with no changes"). The [Construction Set Extender][cse] is essential to developing mods, but the script editor, AvalonEdit,
+is currently [mostly broken][csewine] in WINE. Documenting these issues so other Oblivion Linux users or those that want to switch can be more comfortable.
+I hope to be able to explain how I work so others don't fumble like I did for a while.
+
+<h5>Shell Scripting and Linux Stuff</h5>
+Learning how to shell script has been immensl
+
+[firstpost]:		/linux/2020/03/14/firstpost.html
+[winenine]:		https://github.com/iXit/wine-nine-standalone
+[dxvk]:			https://github.com/doitsujin/dxvk
+[cse]:			https://www.nexusmods.com/oblivion/mods/36370/?
+[csewine]:		https://appdb.winehq.org/objectManager.php?sClass=version&iId=38754
