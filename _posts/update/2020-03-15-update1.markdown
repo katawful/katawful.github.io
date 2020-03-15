@@ -6,11 +6,12 @@ sidebar:
   title: "Similar Posts"
   nav: update
 header:
+   overlay_image: /assets/images/generic-header.jpg
    teaser: /assets/images/generic-image.png
 date:   2020-03-15 13:41:25 -0400
 categories: update
 ---
-<h2>Welcome to my blog</h2>
+<h2>Preamble</h2>
 
 I made this blog because I really needed a place to put my thoughts, ideas, and processes somewhere more readable than just a GitHub wiki.
 I also wanted a site that wasn't reliant on any one service, allowing me to switch hosts when I'm able to. Yeah this is reliant on GitHub atm, but if things go south I'll still have the site data.
@@ -30,10 +31,37 @@ is currently [mostly broken][csewine] in WINE. Documenting these issues so other
 I hope to be able to explain how I work so others don't fumble like I did for a while.
 
 <h5>Shell Scripting and Linux Stuff</h5>
-Learning how to shell script has been immensl
+Learning how to shell script has been immensely helpful for. I can perform so many actions far easier. I launch all of my WINE games through scripts, using the 
+correct WINEPREFIX and any environment variables I need (such as a HUD). I also use them for day to day things. So systemd service and daemons don't properly start 
+after a suspend, so I have a script that I run that after I open things up. I also have countless shell aliases (names for shell commands) that speed up actions a 
+lot. For instance, I'm too lazy to set up automatic Redshift (f.lux/nightmode) in i3 so I just type "night-light" or "day-light" as a command and it does it changes
+the screen. I could go on and on about shell scripting, but I think you get the idea. There are some more focused ones I'd like to go over in the future, so watch
+out for that.
+
+<h5>AutoKey, the AutoHotKey Replacement</h5>
+[AutoHotKey][autohotkey] is probably one of the most useful and comprehensive tools that any Windows poweruser should use. However, being so focused on Windows, 
+a Linux port is impossible. Fortunately, [AutoKey][autokey] exists!. It uses some X11 based tools and with Python (including additional functions) to allow for 
+easy hotkeys of your X11 based desktop. I don't use this super extensively. KDE and i3 already allow for pretty extensive keyboard control. My dream is to replicate
+[this][taran] AutoHotKey script. I do believe that it's possible, but it requires far more knowledge than I have. My 5 desktops/using i3 has aleviated some of that.
+There are a handful of scripts for AutoKey that I do use fairly frequently for CSE, and they could easily be translated and documented for Windows users let alone
+Linux users.
+
+<h5>Site Stuff</h5>
+This blog has been a painful time to set up due to my lack of webdev skill, so if you're reading this when it gets posted you're probably seeing a low functioning
+site. I want to add a lot, including a more comprehensive sidebar for related posts, tag management, comments, maybe some site integration. The site theme needs work,
+its currently very bare with the only real changes was making a gruvbox style color scheme (since the rest of my computer is gruvboxed). There's also some layout 
+problems that I don't know how to fix yet, so hopefully you can forgive some formatting issues (sorry mobile users). Its a project site so I don't really need it
+to be perfect right away. 
+
+<h5>Closing</h5>
+I have a lot of posts I'd like to add so feel free to check back every once in a while. I will be posting more major things to various sites as I see fit, and guides
+are one the big things I want to do. I hope you'll enjoy what I have to offer!
 
 [firstpost]:		/linux/2020/03/14/firstpost.html
 [winenine]:		https://github.com/iXit/wine-nine-standalone
 [dxvk]:			https://github.com/doitsujin/dxvk
 [cse]:			https://www.nexusmods.com/oblivion/mods/36370/?
 [csewine]:		https://appdb.winehq.org/objectManager.php?sClass=version&iId=38754
+[autohotkey]:		https://www.autohotkey.com/
+[autokey]:		https://github.com/autokey/autokey/wiki
+[taran]:		https://youtu.be/OqyQABySV8k
