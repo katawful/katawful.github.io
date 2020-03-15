@@ -25,10 +25,14 @@ back:
 
 # linux post sidebar
 linux:
+        - title: "Welcome to My Blog!!!"
+          url: /update/2020/03/15/update1.html
         - title: "Back"
           url: /blog/
 
 # update post sidebar
 update:
+        - title: "My Linux History and Plans"
+          url: /linux/2020/03/14/firstpost.html
         - title: "Back"
           url: /blog/
