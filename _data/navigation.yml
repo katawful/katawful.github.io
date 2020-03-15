@@ -17,9 +17,9 @@ nav:
 # category sidebar
 back:
         - title: "Linux"
-          url: /category/linux/
+          url: /category/linux
         - title: "Updates"
-          url: /category/update/
+          url: /category/update
         - tile: "Back"
           url: /blog/
 
