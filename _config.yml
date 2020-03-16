@@ -32,7 +32,6 @@ github_username:  katawful
 
 
 # Build settings
-theme: "minimal-mistakes-jekyll"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
