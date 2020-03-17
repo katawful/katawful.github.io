@@ -216,7 +216,21 @@ While this does increase performance in many situations, it seems to be broken w
 I simply can't recommend it for Oblivion (and any game where ENB is desired).
 If you wish to use it, look up how to do it yourself. I can't support it until it's fixed.
 
-<h3>5. Closing Words</h3>
+<h3>5. Audio</h3>
+
+If you haven't already, start up Oblivion to the main menu. If you hear music you're good to go and can skip this section.
+If not, well you're in for a fun time.
+Audio is an annoying topic when it comes to WINE, Oblivion in particular. MP3 support isn't neccessarily a guarantee when you install your distro.
+This is because of two things: you don't have the requisite mp3 library installed and/or you're using gstreamer as your audio backend which doesn't some with MP3 support out of the box.
+Many distros will use gstreamer so you're going to need to install some things.
+For generic mp3 support, you need the mpg123 library. WINE builds against this, but you still need to have the libraries.
+Open your package manager and search for "mpg123". Install that and "lib32-mpg123" if it's not installed.
+If you just installed it, see if audio works for you now. If it does, you're all set. If not, continue.
+Search for "gst-plugins" in your package manager. Some distros won't install these by default.
+Install "gst-plugins-good" **and** "lib32-gst-plugins-good" for MP3 support and whatever dependencies it relies on.
+This should fix audio for Oblivion now.
+
+<h3>6. Closing Words</h3>
 
 This is just an installation guide, so modding is kind of up in the air. If you install OBSE, install it normally and change your application script to run the loader instead of the Oblivion Launcher.
 I do have plans for a modding guide for Oblivion on Linux. It requires a good bit of setup and knowledge to work around limitations.
