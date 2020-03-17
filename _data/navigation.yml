@@ -36,3 +36,8 @@ update:
           url: /linux/2020/03/14/firstpost.html
         - title: "Back"
           url: /blog/
+
+# oblivion post sidebar
+oblivion:
+        - title: "Back"
+          url: /blog/
