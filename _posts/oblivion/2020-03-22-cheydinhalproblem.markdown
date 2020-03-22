@@ -4,7 +4,7 @@ title:  "The Cheydinhal Problem: Understanding Performance in Oblivion"
 date:   2020-03-22 15:54:25 -0400
 excerpt: Figuring out the performance problems of Cheydinhal and why Oblivion doesn't perform well.
 header: 
-  teaser: /assets/images/cheydinhal-problem/teaser.jpg
+  teaser: /assets/images/cheydinhal-problem/teaser.png
   overlay_image: /assets/images/cheydinhal-problem/header.jpg
 categories: oblivion 
 tags:
@@ -135,7 +135,7 @@ Those meshes might also be placed generically to create new structures.
 They simply couldn't make every model in the game have 1 mesh and 1-2 textures, that would eat up too much space in storage and memory.
 One of the basic Cheydinhal house models look like this:
 
-![nifskope](/assets/images/cheydinhal-problem/nifskope.jpg)
+![nifskope](/assets/images/cheydinhal-problem/nifskope.png)
 
 where each "NiTriStrips" has a corresponding texture and that texture might have a corresponding normal map.
 That's ~50 draw calls **per house**. And there's dozens of houses in view at any one time.
