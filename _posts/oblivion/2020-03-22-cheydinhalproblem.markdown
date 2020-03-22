@@ -1,11 +1,11 @@
 ---
 layout: single
 title:  "The Cheydinhal Problem: Understanding Performance in Oblivion"
-date:   2020-03-22 13:48:25 -0400
+date:   2020-03-22 15:54:25 -0400
 excerpt: Figuring out the performance problems of Cheydinhal and why Oblivion doesn't perform well.
 header: 
-  teaser: /assets/images/cheydinhal-problem/teaser.png
-  overlay_image: /assets/images/cheydinhal-problem/header.png
+  teaser: /assets/images/cheydinhal-problem/teaser.jpg
+  overlay_image: /assets/images/cheydinhal-problem/header.jpg
 categories: oblivion 
 tags:
   - performance
@@ -22,7 +22,7 @@ The framerates you see shouldn't be a direct indication or taken as fact.
 I have no idea what I did.
 It's still an interesting problem.*
 
-![west-gate](/assets/images/cheydinhal-problem/cheydinhal-yes-houses.png)
+![west-gate](/assets/images/cheydinhal-problem/cheydinhal-yes-houses.jpg)
 
 It's an old game and our hardware is sooooo much better than what was available at the time.
 [AnandTech][benchmark] was using an Athlon 64 dual core and SLI/Crossfire GPUs (which did actually scale pretty well, Oblivion takes well to it) and were lucky to hit 30 FPS at **medium** settings at 1024x768.
@@ -90,7 +90,7 @@ Being on Linux, and having an AMD GPU my best option is Gallium HUD using the Ga
 This give me per core CPU performance, FPS, GPU load, and draw calls.
 An example:
 
-![hud](/assets/images/cheydinhal-problem/hud.png)
+![hud](/assets/images/cheydinhal-problem/hud.jpg)
 
 <h4>First Thoughts</h4>
 
@@ -99,8 +99,8 @@ I had tested my HUD in the starting prison cell and believed that the light was 
 That's quite a lot for a light.
 So I went to Cheydinhal and messed around with lights at the West Gate and quickly realized that lights weren't the issue:
 
-![light](/assets/images/cheydinhal-problem/light-on.png)
-![nolight](/assets/images/cheydinhal-problem/light-off.png)
+![light](/assets/images/cheydinhal-problem/light-on.jpg)
+![nolight](/assets/images/cheydinhal-problem/light-off.jpg)
 
 Disabling the lights changed nothing! Clearly I was thinking in the wrong direction.
 
@@ -110,16 +110,16 @@ My next thought was maybe that it's the houses that are the problem.
 I had already known that they were inefficient.
 So I did the same test with a house:
 
-![house](/assets/images/cheydinhal-problem/house-on.png)
-![nohouse](/assets/images/cheydinhal-problem/house-off.png)
+![house](/assets/images/cheydinhal-problem/house-on.jpg)
+![nohouse](/assets/images/cheydinhal-problem/house-off.jpg)
 
 A dramatic drop in draw calls happened!
 5000 draw calls dropped in an instance.
 
 So I decided to do something even more drastic, I deleted a bunch of houses and the chapel and tested again:
 
-![west-gate](/assets/images/cheydinhal-problem/cheydinhal-yes-houses.png)
-![nohouses](/assets/images/cheydinhal-problem/cheydinhal-no-houses.png)
+![west-gate](/assets/images/cheydinhal-problem/cheydinhal-yes-houses.jpg)
+![nohouses](/assets/images/cheydinhal-problem/cheydinhal-no-houses.jpg)
 
 Almost 20k draw calls removed in an instant. The problem was never lighting, or LOD. It is all of the houses in Cheydinhal.
 
@@ -135,7 +135,7 @@ Those meshes might also be placed generically to create new structures.
 They simply couldn't make every model in the game have 1 mesh and 1-2 textures, that would eat up too much space in storage and memory.
 One of the basic Cheydinhal house models look like this:
 
-![nifskope](/assets/images/cheydinhal-problem/nifskope.png)
+![nifskope](/assets/images/cheydinhal-problem/nifskope.jpg)
 
 where each "NiTriStrips" has a corresponding texture and that texture might have a corresponding normal map.
 That's ~50 draw calls **per house**. And there's dozens of houses in view at any one time.
