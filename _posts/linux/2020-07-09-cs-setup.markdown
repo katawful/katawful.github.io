@@ -115,7 +115,7 @@ $ printf 'obse_loader\x00' | dd conv=notrunc of=OblivionLauncher.exe bs=1 seek=$
 ```
 This command replaces the executable that OblivionLauncher uses with obse_loader.exe
 
-This is a very hacky solution, but the only one we are allowed to do as OBSE isn't free open source.
+This is a very hacky solution, but the only one we are allowed to do as OBSE maintained anymore.
 Hopefully someone picks up development again now that NVSE is getting new devs and MWSE v2 exists.
 [This][hack] reddit post has a bit more information about what it does if you are concerned.
 
@@ -216,7 +216,7 @@ If we left it to float then we would fight with other floating windows:
 ![cs-float](/assets/images/cs/cs-float.png)
 
 i3 focuses any window when the mouse floats over it.
-So we would constantly focus the wrong window, with dialog boxes become lost.
+So we would constantly focus the wrong window, with dialog boxes becoming lost.
 
 Let's instead add some rules:
 ```
