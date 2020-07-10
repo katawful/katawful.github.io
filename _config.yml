@@ -41,6 +41,12 @@ minimal_mistakes_skin: "gruvbox"
 paginate: 5
 paginate_path: /page:num/
 
+# comment stuff
+#emptyArray: []
+#
+#comments:
+#  receiver: https://{{your-receiver-site}}/api/PostComment}}
+
 #collections for categroy
 collections:
         category:
