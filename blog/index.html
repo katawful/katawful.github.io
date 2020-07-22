@@ -14,6 +14,10 @@ sidebar:
 	background-color: #3c3836;
 	padding: 10px;
 }
+.box {
+	display: block ruby;
+	align-items: left;
+}
 </style>
 </head>
 {% include sidebar.html %}
@@ -27,7 +31,10 @@ Feel free to browse at your leisure!
 <div class="Posts">
 	<time>{{ post.date | date: "%b %-d, %Y" }}</time>
 	<h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-	<img src="{{post.header.teaser}}" alt="Header" style="margin-left:0em;margin-bottom:0.5em;border:2px #ebdbb2;border-style:solid;border-radius:2px;width:10%;height:10%;"> &nbsp;{{post.excerpt }}<br>
+	<div class="box">
+	<img src="{{post.header.teaser}}" alt="Header" style="margin-left:0em;margin-bottom:0.5em;border:2px #ebdbb2;border-style:solid;border-radius:2px;width:10%;height:10%;verical-align:middle;"> 
+	<span style="">{{post.excerpt }}</span><br>
+	</div>
 </div>
 <br>
 {% endfor %}
