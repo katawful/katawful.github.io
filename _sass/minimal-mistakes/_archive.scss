@@ -6,35 +6,38 @@
 	--archive-width: calc(100% - #{$right-sidebar-width});
 }
 .archive {
-  margin-top: 1em;
-  margin-bottom: 2em;
+//  margin-top: 1em;
+//  margin-bottom: 2em;
+//  margin-right: calc(#{$right-sidebar-width-narrow});
+//  margin-left: calc(#{$right-sidebar-width-narrow});
+  margin: auto;
 
   @include breakpoint($large) {
-    float: left;
-    width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-right: $right-sidebar-width-narrow;
+    float: none;
+    width: calc(100% - #{$right-sidebar-width-narrow} - 10em);
+//    padding-right: $right-sidebar-width-narrow;
   }
 
   @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});
-    padding-right: $right-sidebar-width;
+    width: calc(100% - #{$right-sidebar-width} - 14em);
+//    padding-right: $right-sidebar-width;
   }
 }
 
 .archive__item {
   position: relative;
-  display: inline-grid;
+  display: grid;
 //  grid-template-areas: 'image title' 'excerpt excerpt';
   grid-template-columns: auto auto auto auto;
   grid-gap: 0px 5px;
-  a {
-    position: relative;
-    z-index: 10;
-  }
-
-  a[rel="permalink"] {
-    position: static;
-  }
+//  a {
+//    position: relative;
+//    z-index: 10;
+//  }
+//
+//  a[rel="permalink"] {
+//    position: relative;
+//  }
 }
 
 .archive__subtitle {
@@ -56,18 +59,18 @@
   line-height: initial;
   overflow: hidden;
 //  width: calc(var(--archive-width) * (3/4));
-  width: 650px;
+  width: auto;
   text-overflow: ellipsis;
-  grid-area: 1 / 2 / span 1 / span 3;
+//  grid-area: 1 / 2 / span 1 / span 3;
 
   a[rel="permalink"]::before {
     text-align: left;
     content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    position: relative;
+//    left: 0;
+//    top: 0;
+//    right: 0;
+//    bottom: 0;
   }
 
   a + a {
@@ -87,13 +90,10 @@
   position: relative;
   border-radius: $border-radius;
 //  width: calc(var(--archive-width) * (1/4));
-  width: 250px;
+  width: auto;
   overflow: hidden;
-  grid-area: 1 / 1 / span 1 / span 1;
+  //grid-area: 1 / 1 / span 1 / span 1;
 
-  img {
-    width: 100%;
-  }
 }
 
 
@@ -236,11 +236,11 @@
 
   .archive__item-teaser {
     @include breakpoint($small) {
-      max-height: 200px;
+      max-height: 100%;
     }
 
     @include breakpoint($medium) {
-      max-height: 120px;
+      max-height: 100%;
     }
   }
 }

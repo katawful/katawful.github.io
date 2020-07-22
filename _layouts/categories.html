@@ -1,8 +1,20 @@
 ---
 layout: archive
 ---
+<head>
+<style>
+.Category {
+	border: 1px #ebdbb2;
+	border-style: solid;
+	border-radius: 3px;
+	background-color: #3c3836;
+	padding: 10px;
+}
+</style>
+</head>
 
 {{ content }}
+{% include sidebar.html %}
 
 {% assign categories_max = 0 %}
 {% for category in site.categories %}
@@ -32,7 +44,10 @@ layout: archive
         <h2 class="archive__subtitle">{{ category[0] }}</h2>
         <div class="entries-{{ page.entries_layout | default: 'list' }}">
           {% for post in category.last %}
+	  <!--	    <div class="Category">-->
             {% include archive-single.html type=page.entries_layout %}
+	    <!--</div>-->
+	    <br>
           {% endfor %}
         </div>
         <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>

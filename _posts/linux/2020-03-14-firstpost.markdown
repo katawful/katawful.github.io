@@ -6,9 +6,7 @@ excerpt: A quick run down of why I use Linux and my experiences.
 header: 
   teaser: /assets/images/teaser-image.png
   overlay_image: /assets/images/header-image.jpg
-sidebar:
-   title: "Similar Posts"
-   nav: linux
+permalink: /:categories/:title
 categories: linux 
 tags:
   - wine

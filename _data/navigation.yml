@@ -4,15 +4,17 @@ main:
     url: /blog/
   - title: "About"
     url: /about/
-  - title: "Contact"
-    url: /contact/
 
 # blog sidebar
 nav:
-        - title: "Linux"
-          url: /category/linux/
-        - title: "Update"
-          url: /category/update/
+        - title: "Categories"
+          url: /categories/
+        - title: "  - Linux"
+          url: /categories/#linux
+        - title: "  - Updates"
+          url: /categories/#updates
+        - title: "  - Oblivion"
+          url: /categories/#oblivion
 
 # category sidebar
 back:

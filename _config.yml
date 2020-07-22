@@ -35,6 +35,7 @@ github_username:  katawful
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-seo-tag
 minimal_mistakes_skin: "gruvbox"
 
 # paginate stuff
@@ -55,9 +56,19 @@ defaults:
         -
                 scope:
                         path: ""
-                        type: category
+                        type: "categories"
                 values:
                         layout: "category"
+                scope:
+                        path: ""
+                        type: "posts"
+                values:
+                        layout: "single"
+                        header:
+                                teaser: /assets/images/generic-header.jpg
+                                overlay_image: /assets/images/generic-image.png
+                        social: true
+                        permalink: /:categories/:title
 
 # include folders
 include:

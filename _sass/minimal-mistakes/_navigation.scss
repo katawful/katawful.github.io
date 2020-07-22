@@ -432,7 +432,7 @@
 
 .nav__list .nav__items {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: $type-size-5;
 
   a {
     color: inherit;
@@ -477,7 +477,7 @@
   margin: 0;
   padding: 0.5rem 0.75rem;
   font-family: $sans-serif-narrow;
-  font-size: $type-size-5;
+  font-size: $type-size-4;
   font-weight: bold;
 }
 

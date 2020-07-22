@@ -6,10 +6,10 @@ excerpt: How you can use the Construction Set in Linux and make it work to your 
 header: 
   teaser: /assets/images/cs/cse-extender.png
   overlay_image: /assets/images/header-image.jpg
-sidebar:
-   title: "Similar Posts"
-   nav: linux
+permalink: /:categories/:title
 categories: linux 
+toc: true
+toc_label: "Guidepost"
 tags:
   - wine
   - oblivion
@@ -31,7 +31,7 @@ We can use these to add in features that the CS just doesn't have like a hotkey 
 
 The first thing we should do, however, is install the CS and/or CSE:
 
-<h3>1: Steam Verison</h3>
+### 1: Steam Version
 If you have the GoG version, skip to the second section "2: Installing CSE".
 
 [Proton][proton] is amazing.
@@ -40,7 +40,7 @@ Anything Windows that runs through Steam can run through Proton.
 Unfortunately its meant more for direct integration rather than tinkering.
 It is possible to tinker around, but its a touch less obvious.
 
-<h4>a: Proton Prefixes</h4>
+#### a: Proton Prefixes
 Steam creates Wine prefixes for every title it manages through Proton and they're all isolated to said prefix.
 This is great for us.
 The only thing we really need to be concerned about is where it is and how to use it.
@@ -48,7 +48,7 @@ These prefixes are in your 'steamapps' folder under 'compatdata'.
 Inside 'compatdata' are folders for each game using their appid (Oblivion being 22330).
 And inside those folders is the actual prefix folder 'pfx'.
 
-<h4>b: Managing Oblivion Apps for Steam</h4>
+#### b: Managing Oblivion Apps for Steam
 So I'm not going to elaborate ton here, but there are two ways we can modding tools for the Steam version of Oblivion:
 - we can do everything inside this prefix
 - or we can do everything inside a different prefix managed/created by Wine   
@@ -58,12 +58,12 @@ You need to set up the registry, link appropriate folders between the two prefix
 You're free to do that, but I won't explain that.
 Its up to you.
 
-<h4>c: Installing the Construction Set</h4>
+#### c: Installing the Construction Set
 Unfortunately the Steam version doesn't install the CS for you like the GoG version.
 Grab the [download][cs] from the Nexus and extract it somewhere you like.   
 While Valve doesn't really advertise it, we can directly use Proton as if it were just Wine:
 
-```
+```shell
 STEAM_COMPAT_DATA_PATH=/path/to/compatdata/22330/ /path/to/Proton\ x.x/proton run desired.exe
 ```
 
@@ -79,7 +79,7 @@ Unfortunately we can't just add the CS to Steam, Steam will think its a whole ne
 Instead make a script with the full Proton command pointing it 'TESConstructionSet.exe'.
 Create a text file somewhere you like and inside paste the following, editing what's appropriate:
 
-```
+```shell
 #!/bin/sh   
 
 STEAM_COMPAT_DATA_PATH=/path/to/compatdata/22330/ /path/to/Proton\ x.x/proton run /path/to/TESConstructionSet.exe
@@ -89,7 +89,7 @@ Then make that an executable either through your file manager or by using `chmod
 Add it to Steam as a non-Steam Play title (basically don't enable Steam Play for it) and you're good to go.
 The CS is now installed but we're not done with the Steam version specifics just yet.
 
-<h4>d: Running OBSE on Steam</h4>
+#### d: Running OBSE on Steam
 OBSE is essentially required to really make any Oblivion mods in the modern day and it gives us access to the wonderful Construction Set Extender.
 Unfortunately, OBSE for the Steam version of Oblivion is quite weird and different.
 When you install it on Windows, you run the game through the default launcher (i.e. by running Oblivion on Steam) and then OBSE loads.
@@ -106,11 +106,11 @@ Then open up a terminal at the main Oblivion folder with Oblivion.exe.
 
 We are going to run two commands and I will try my best to explain what these do:
 
-```
+```shell
 $ printf '\x90\x90\x90' | dd conv=notrunc of=obse_loader.exe bs=1 seek=$((0x14cb))
 ```
 This command essentially stops obse_loader from complaining that the Steam version is being used
-```
+```shell
 $ printf 'obse_loader\x00' | dd conv=notrunc of=OblivionLauncher.exe bs=1 seek=$((0x1347c))
 ```
 This command replaces the executable that OblivionLauncher uses with obse_loader.exe
@@ -121,7 +121,7 @@ Hopefully someone picks up development again now that NVSE is getting new devs a
 
 After all this, you should be able to launch Oblivion on Steam with OBSE loaded.
 
-<h3>2: Installing CSE</h3>
+### 2: Installing CSE
 
 First off, grab the [Construction Set Extender][cse].
 The CSE enhances and improves the CS in pretty much every single way.
@@ -132,32 +132,32 @@ For the Steam version you also need "Protontricks".
 It doesn't have distro packages so check the [repo][protontricks] for installation instructions.
 
 To use Winetricks, simply run it as a command with WINEPREFIX pointing to your prefix:   
-```
+```shell
 WINEPREFIX=/path/to/prefix winetricks windows-dll-to-install
 ```
 
 To use Protontricks simply run it as a command like so:   
-```
+```shell
 protontricks APPID windows-dll-to-install
 ```
 'APPID' is the games appid, 22330 for Oblivion in this case.
 
-<h4>a: Installing the Requirements</h4>
+#### a: Installing the Requirements
 For CSE we will need 'dotnet452' and 'vcrun2017', so simply run either winetricks or protontricks depending on your setup;
 replace 'windows-dll-to-install' with the two things we needed to install like so:
-```
+```shell
 WINEPREFIX=/path/to/prefix winetricks dotnet452 vcrun2017
 ```
 Proton/Winetricks will do its thing and take you through the install process for both .NET 4.52 and VC++ Runtime 2017.
 Go through it, just don't hit "Restart Now" if that comes up.
 You don't need to do that with Wine lol.
 
-<h4>b: Installing and Running CSE</h4>
+#### b: Installing and Running CSE
 Install CSE as the instruction say, its pretty simple.
 The CSE must be started with CS running in OBSE mode so we need to know how to do that.
 
 For GoG, open a terminal in the main Oblivion folder then run a command like the following:   
-```
+```shell
 WINEPREFIX=/path/to/prefix wine obse_loader.exe -editor -notimeout
 ```
 CSE should start and look very different than the normal CS with fancy effects.
@@ -165,13 +165,13 @@ After that you're (mostly) good to go!
 I would recommend making this a script or alias so you don't have to type this all out.
 
 For Steam, it requires that Proton command you saved from earlier:   
-```
+```shell
 STEAM_COMPAT_DATA_PATH=/path/to/compatdata/22330/ /path/to/Proton\ x.x/proton run obse_loader.exe -editor -notimeout
 ```
 If should load up and look fancy.
 If you already made a script for the CS so you can launch it through Steam, just change out what you had earlier for the above.
 
-<h3>3: Dreaded Wine Bug</h3>
+### 3: Dreaded Wine Bug
 
 Unfortunately, one part of CSE does not work in Wine.
 The script editor, provided by AvalonEdit is broken with newer version of Wine maybe.
@@ -181,18 +181,18 @@ It freaks out about being resized, shooting out an error message box when starte
 
 This seems to be a problem with GPU acceleration of AvalonEdit.
 Fortunately for us, we can disable hardware acceleration for AvalonEdit with a registry edit.
-```
+```shell
 WINEPREFIX=/path/to/prefix wine reg add "HKCU\\SOFTWARE\\Microsoft\\Avalon.Graphics" /v DisableHWAcceleration /t REG_DWORD /d 1 /f
 ```
 If you're a Steam user its best to just do the above with your Steam compatdata path, appending /pfx to the end of it:
-```
+```shell
 WINEPREFIX=/path/to/compatdata/22330/pfx wine reg add "HKCU\\SOFTWARE\\Microsoft\\Avalon.Graphics" /v DisableHWAcceleration /t REG_DWORD /d 1 /f
 ```
 After this everything is all set up to start making mods.
 The only lingering problem is CSE just not loading sometimes.
 If it doesn't then just exit out and restart until it does load.
 
-<h3>4: My Use of the CS</h3>
+### 4: My Use of the CS
 
 I currently use Arch (btw) with i3 as my window manager/DE.
 i3 is a tiling window manager which means that the window manager controls how windows are drawn to the screen.
@@ -208,7 +208,7 @@ The issue with respect to the CS is that all of its windows besides the main win
 That's controlled by your window manager which in turn is controlled by you.
 These kinds of Linux WMs do have tools and rules to improve this functionality, but not something I use.
 
-<h4>a: i3 Config</h4>
+#### a: i3 Config
 That's where a tiling WM like i3 comes in.
 i3 lets us control if windows are tiling or floating which means we can take the windows like "Render Window" and force it to tile.
 If we left it to float then we would fight with other floating windows:
@@ -239,7 +239,7 @@ This is much more manageable now that everything possible is kept as its own tab
 However, just because we adapted the windows for i3 doesn't mean that we can still control things in i3.
 We need to be able to add our own hotkeys and additional controls.
 
-<h4>b: Hotkeys</h4>
+#### b: Hotkeys
 AutoHotKey is a wonderful tool for Windows that lets you create arbitrary hotkeys and other functions for basically any app.
 If you want the extreme of that, check out some of the scripts Taran Van Hemert has come up with on his YouTube channel.
 However, it's obviously a Windows app and there's not a whole lot in the way of Wine support since it is so tightly built around Windows.
@@ -254,13 +254,13 @@ You cannot save your plugin, open a plugin, search through windows, etc... throu
 Having to switch to your mouse for dead simple features is not only very annoying, but slows down your workflow.
 I'm much faster at my keyboard for most things, so why shouldn't I be able to do even basic tasks from my keyboard?
 
-<h5>i: Searching</h5>
+##### i: Searching
 The CS is a great application that decides to not give us a shortcut to search in windows where it's available.
 You're likely to want to search in the Cell View and Object windows all the time, and having to move your mouse every single time is the opposite of fun.
 I have perfected the search function for AutoKey and can be expanded to any window.
 See the script [here](https://github.com/katawful/dotfiles/blob/master/.config/autokey/data/TES%20CS/Search%20Window.py).
 
-<h5>ii: Open Plugins</h5>
+##### ii: Open Plugins
 Opening a plugin should be a super simple hotkey.
 And yet, the CS just doesn't have something like it.
 The script for it is super simple, see it [here](https://github.com/katawful/dotfiles/blob/master/.config/autokey/data/TES%20CS/Open.py).
@@ -269,7 +269,7 @@ If we override an application hotkey with one from AutoKey (like Ctrl-O) for ope
 This becomes a problem in a later section, so I set this open script to Ctrl-Shift-O instead.
 Minor annoyance but not too bad.
 
-<h4>c: Vim Plugin</h4>
+#### c: Vim Plugin
 I use Vim to edit all of my Oblivion script files.
 This originally started as me needing to use a separate text editor to work around an issue with the CSE script editor.
 Now I'm in too deep to want to switch from it.
@@ -283,7 +283,7 @@ It's not really set up as a true plugin, so if you want to use it you'll have to
 All the files are in my public [dotfiles](https://github.com/katawful/dotfiles) repo, including my AutoKey scripts.
 They're free to use without any license.
 
-<h3>5: Conclusions</h3>
+### 5: Conclusions
 This post was kinda verbose and took forever to write up, but I think it's good to show that Linux is viable for fulltime use if you're an Oblivion modder.
 You don't really need to do anything fancy like I do, the CS will run just fine in Wine as is.
 I've even gotten the CSE lipsync generator to work, and that has spotty support even on Windows.

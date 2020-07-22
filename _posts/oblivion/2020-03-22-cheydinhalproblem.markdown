@@ -6,6 +6,7 @@ excerpt: Figuring out the performance problems of Cheydinhal and why Oblivion do
 header: 
   teaser: /assets/images/cheydinhal-problem/teaser.png
   overlay_image: /assets/images/cheydinhal-problem/header.jpg
+permalink: /:categories/:title
 categories: oblivion 
 tags:
   - performance

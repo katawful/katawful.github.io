@@ -1,3 +1,14 @@
+<head>
+<style>
+.Posts {
+	border: 1px #ebdbb2;
+	border-style: solid;
+	border-radius: 3px;
+	background-color: #3c3836;
+	padding: 10px;
+}
+</style>
+</head>
 {% if post.header.teaser %}
   {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
 {% else %}
@@ -10,7 +21,8 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
+{%comment%}
+<!--<div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
       {% if include.type == "grid" and teaser %}
        <div class="archive__item-teaser">
@@ -20,9 +32,18 @@
           {% else %}
             "{{ teaser | relative_url }}"
           {% endif %}
-          alt="">
-      </div>
-    {% endif %}
+          alt=""
+	  style="border:2px #ebdbb2;border-style:solid;border-radius:2px;width:10%;height:10%;">
+        </div>
+      {% endif %}
+      <h6 class="archive__item-title" itemprop="headline">
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% else %}
+        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+      {% endif %}
+    </h6>
+    <br>
        {% if post.header.teaser %}
       <div class="archive__item-teaser">
         <a href="{{ post.url | relative_url }}"><img src=
@@ -31,19 +52,23 @@
           {% else %}
             "{{ teaser | relative_url }}"
           {% endif %}
-          alt="{{ post.title }}" width="575" height="216"></a>
+          alt="{{ post.title }}"
+	  style="border:2px #ebdbb2;border-style:solid;border-radius:2px;width:50%;"></a>
       </div>
     {% endif %}
-    <h6 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
-    </h6>
+    
     {% if post.read_time %}
       <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 260 }}</p>{% endif %}
   </article>
+</div>-->
+{%endcomment%}
+
+{% for categories in post.categories %}
+<div class="Posts">
+	<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+	<h6><a href="{{ post.url | relative_url }}" style="margin-top:0;">{{ title }}</a></h6>
+	{{ post.excerpt }}
 </div>
+{% endfor %}

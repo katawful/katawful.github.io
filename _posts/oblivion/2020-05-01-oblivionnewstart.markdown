@@ -3,12 +3,10 @@ layout: single
 title:  "Oblivion's New Start Mods and a Proposal"
 date:   2020-05-01 16:00:25 -0400
 excerpt: Understanding the problems with Oblivion's new start mods from a gameplay perspective
+permalink: /:categories/:title
 header: 
   teaser: /assets/images/oblivion-wine/vilverin-teaser.png
   overlay_image: /assets/images/oblivion-wine/vilverin-header.png
-sidebar:
-   title: "Similar Posts"
-   nav: oblivion
 categories: oblivion 
 tags:
   - wine

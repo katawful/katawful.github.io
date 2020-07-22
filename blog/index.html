@@ -1,16 +1,34 @@
 ---
 layout: posts
-classes: wide
+title: "Kat's Ramblings"
 sidebar:
   title: "Posts"
   nav: nav
 ---
-<h4>My blog!</h4>
-This is all of the stuff I write up.
+<head>
+<style>
+.Posts {
+	border: 1px #ebdbb2;
+	border-style: solid;
+	border-radius: 3px;
+	background-color: #3c3836;
+	padding: 10px;
+}
+</style>
+</head>
+{% include sidebar.html %}
+
+A collection of my thoughts and guides and other random nonsense.
+Feel free to browse at your leisure!
 <br>
+<br>
+<body>
 {% for post in site.posts %}
-<!--	<br>
+<div class="Posts">
 	<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-	<h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>-->
-	{% include archive-single.html %}
+	<h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+	<img src="{{post.header.teaser}}" alt="Header" style="border:2px #ebdbb2;border-style:solid;border-radius:2px;width:10%;height:10%;"> &nbsp;{{ post.excerpt }}<br>
+</div>
+<br>
 {% endfor %}
+</body>
