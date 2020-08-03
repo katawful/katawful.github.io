@@ -7,7 +7,7 @@ header:
   teaser: /assets/images/teaser-image.png
   overlay_image: /assets/images/header-image.jpg
 permalink: /:categories/:title
-categories: linux 
+categories: linux
 tags:
   - wine
   - oblivion

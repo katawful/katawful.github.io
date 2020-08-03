@@ -214,6 +214,7 @@ figure {
   align-items: flex-start;
   flex-wrap: wrap;
   margin: 2em 0;
+  border: 0px;
 
   img,
   iframe,
@@ -223,9 +224,14 @@ figure {
 
   img {
     width: 100%;
-    border-radius: $border-radius;
+//    border-radius: $border-radius;
+    border: 0px;
+    border-style: solid;
+    border-color: #ebdbb2;
+    border-radius: 4px;
     -webkit-transition: $global-transition;
     transition: $global-transition;
+    padding: 0.15em;
   }
 
   > a {

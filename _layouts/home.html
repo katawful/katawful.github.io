@@ -2,14 +2,23 @@
 layout: archive
 ---
 
+<head>
+<style>
+.archive__shift {
+	position: relative;
+}
+</style>
+</head>
+
 {{ content }}
-{% include archive-single.html %}
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+<h3 class="archive__subtitle">{{"Recent Blog Posts" }}</h3>
 
 {% if paginator %}
   {% assign posts = paginator.posts %}
+  {% assign art_posts = site.portfolio %}
 {% else %}
   {% assign posts = site.posts %}
+  {% assign art_posts = site.portfolio %}
 {% endif %}
 
 {% for post in posts %}
@@ -17,3 +26,9 @@ layout: archive
 {% endfor %}
 
 {% include paginator.html %}
+<h3 class="archive__subtitle" style="margin-top:4em;">{{"Recent Art Posts" }}</h3>
+{% for post in art_posts %}
+  {% include archive-single.html %}
+{% endfor %}
+
+

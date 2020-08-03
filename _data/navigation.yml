@@ -1,9 +1,14 @@
 # main links
 main:
   - title: "Blog"
+    description: "My ramblings"
     url: /blog/
+  - title: "Portfolio"
+    url: /portfolio/
+    description: "My art"
   - title: "About"
     url: /about/
+    description: "About"
 
 # blog sidebar
 nav:
@@ -15,31 +20,19 @@ nav:
           url: /categories/#updates
         - title: "  - Oblivion"
           url: /categories/#oblivion
-
-# category sidebar
-back:
-        - title: "Linux"
-          url: /category/linux
-        - title: "Updates"
-          url: /category/update
-        - tile: "Back"
-          url: /blog/
-
-# linux post sidebar
-linux:
-        - title: "Welcome to My Blog!!!"
-          url: /update/2020/03/15/update1.html
-        - title: "Back"
-          url: /blog/
-
-# update post sidebar
-update:
-        - title: "My Linux History and Plans"
-          url: /linux/2020/03/14/firstpost.html
-        - title: "Back"
-          url: /blog/
-
-# oblivion post sidebar
-oblivion:
-        - title: "Back"
-          url: /blog/
+# test sidebar
+sidebar:
+        - title: "Blog Categories"
+          children:
+                  - title: "- Linux"
+                    url: /categories/#linux
+                  - title: "- Oblivion"
+                    url: /categories/#oblivion
+                  - title: "- Updates"
+                    url: /categories/#updates
+        - title: "Art"
+          children:
+                  - title: "- Photography"
+                    url: /art_categories/#photography
+                  - title: "- Wood Working"
+                    url: /art_categories/#woodworking

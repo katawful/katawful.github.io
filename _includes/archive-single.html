@@ -1,5 +1,13 @@
 <head>
 <style>
+.grid__item {
+	border: 1px #ebdbb2;
+	border-style: solid;
+	border-radius: 3px;
+	background-color: #3c3836;
+	padding: 10px;
+	text-align:center;
+}
 .Posts {
 	border: 1px #ebdbb2;
 	border-style: solid;
@@ -66,9 +74,17 @@
 {%endcomment%}
 
 {% for categories in post.categories %}
-<div class="Posts">
-	<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-	<h6><a href="{{ post.url | relative_url }}" style="margin-top:0;">{{ title }}</a></h6>
-	{{ post.excerpt }}
-</div>
+	{% if page.entries_layout == "grid" %}
+		<div class="grid__item">
+			<h1 style="margin-bottom:0px"><a href="{{ post.url | relative_url }}" style="margin-top:0;margin-bottom:0px;">{{ title }}</a></h1>
+			<time  style="margin-top:0;">{{ post.date | date: "%b %-d, %Y" }}</time>
+			<img src="{{post.header.teaser}}" alt="missing.jpg" style="border:0px;object-fit:cover;width:auto;height:10em;">
+		</div>
+	{% else %}
+		<div class="Posts">
+			<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+			<h6><a href="{{ post.url | relative_url }}" style="margin-top:0;">{{ title }}</a></h6>
+			{{ post.excerpt }}
+		</div>
+	{% endif %}
 {% endfor %}

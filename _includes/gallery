@@ -16,17 +16,17 @@
   {% endif %}
 {% endif %}
 
-<figure class="{{ gallery_layout }} {{ include.class }}">
+<figure class="{{ gallery_layout }} {{ include.class }}" style="border:0px;">
   {% for img in gallery %}
     {% if img.url %}
       <a href="{{ img.url | relative_url }}"
         {% if img.title %}title="{{ img.title }}"{% endif %}>
           <img src="{{ img.image_path | relative_url }}"
-               alt="{% if img.alt %}{{ img.alt }}{% endif %}">
+               alt="{% if img.alt %}{{ img.alt }}{% endif %}" style="border:0px;">
       </a>
     {% else %}
       <img src="{{ img.image_path | relative_url }}"
-           alt="{% if img.alt %}{{ img.alt }}{% endif %}">
+           alt="{% if img.alt %}{{ img.alt }}{% endif %}" style="border:0px;">
     {% endif %}
   {% endfor %}
   {% if include.caption %}

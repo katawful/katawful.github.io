@@ -11,9 +11,10 @@
 //  margin-right: calc(#{$right-sidebar-width-narrow});
 //  margin-left: calc(#{$right-sidebar-width-narrow});
   margin: auto;
+  margin-left: 0.5em;
 
   @include breakpoint($large) {
-    float: none;
+    float: left;
     width: calc(100% - #{$right-sidebar-width-narrow} - 10em);
 //    padding-right: $right-sidebar-width-narrow;
   }

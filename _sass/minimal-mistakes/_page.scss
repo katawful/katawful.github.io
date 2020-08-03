@@ -6,10 +6,11 @@
   @include clearfix;
 //  margin-left: 0em;
 //  margin-right: 15em;
-  margin: auto;
   position: relative;
   @include breakpoint($large) {
 //     margin-right: calc(#{$right-sidebar-width-narrow} - 10em);
+//     margin-left: calc((#{$large} / 2 )
+     margin-left: calc(#{$right-sidebar-width-narrow} - 5em);
 //     left: calc(#{$right-sidebar-width-narrow});
   }
   @include breakpoint($x-large) {
@@ -46,16 +47,17 @@ body {
 }
 
 .page {
+  padding-left: 0.5em;
   @include breakpoint($large) {
     float: right;
 //    width: calc(100% - #{$right-sidebar-width-narrow});
-    width: 100%;
+    width: calc(100% - #{$right-sidebar-width-narrow} - 3em);
     padding-right: $right-sidebar-width-narrow;
   }
 
   @include breakpoint($x-large) {
 //    width: calc(100% - #{$right-sidebar-width});
-    width: 100%;
+    width: calc(100% - #{$right-sidebar-width} - 3em);
     padding-right: $right-sidebar-width;
   }
 
