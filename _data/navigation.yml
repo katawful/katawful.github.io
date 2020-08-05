@@ -30,6 +30,8 @@ sidebar:
                     url: /categories/#oblivion
                   - title: "- Updates"
                     url: /categories/#updates
+                  - title: "- 5sf Reviews"
+                    url: /categories/#5sf
         - title: "Art"
           children:
                   - title: "- Photography"
