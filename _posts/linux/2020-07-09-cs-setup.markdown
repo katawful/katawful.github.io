@@ -15,6 +15,14 @@ tags:
   - oblivion
   - cs
 ---
+### Preamble Preamble
+When I wrote this update I was basing how Wine supports this entirely on my own experiences.
+I use Arch Linux with an AMD GPU, and tested this update with Sway, the Wayland compositor.
+On i3 the script editor completely broke for me regardless of hardware acceleration.
+XFCE seems to have a bunch of snags but does end up working. 
+Nvidia cards also don't seem to support hardware acceleration, plus has issues with Redshift.
+Take this post with a huge grain of salt, it is simply *my* experiences.
+
 ### v10.0 Update Preamble
 Much to everyone's surprise, shadeMe released a pretty major update for CSE.
 It includes a number of small bug fixes, ENB support, system theming and dark mode support, and ScriptSync.
@@ -154,6 +162,8 @@ Other standalone builds of Wine that fit our needs can be used as well.
 ```shell
 WINEPREFIX=/path/to/prefix WINE=/path/to/custom_build/bin/wine64 winetricks windows-dll-to-install
 ```
+Proton from Steam is installed in your library directory.
+Check there.
 
 To use Protontricks simply run it as a command like so:   
 ```shell
@@ -169,6 +179,7 @@ WINEPREFIX=/path/to/prefix winetricks dotnet452 vcrun2019
 ```
 If you're updating an existing prefix (which I don't recommend, it didn't work for me), you will need to force vcrun2019 to install with `--force vcrun2019`.
 Make sure that you pass your Wine build if needed as explained above.
+If `vcrun2019` fails to install with this pass off simply install it with system Wine.
 Proton/Winetricks will do its thing and take you through the install process for both .NET 4.52 and VC++ Runtime 2019.
 Go through it, just don't hit "Restart Now" if that comes up.
 You don't need to do that with Wine lol.
