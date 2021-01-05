@@ -46,7 +46,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-seo-tag
-minimal_mistakes_skin: "gruvbox"
+minimal_mistakes_skin: "kat"
 
 # paginate stuff
 paginate: 5

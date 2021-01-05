@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "My Construction Set Linux workflow and setup: CSE v10.0 update"
-date:   2021-01-04 12:00:25 -0400
+date:   2021-01-05 12:00:25 -0400
 excerpt: How you can use the Construction Set in Linux and make it work to your advantage, updated for CSE v10.0
 header: 
   teaser: /assets/images/cs/cse-extender.png
