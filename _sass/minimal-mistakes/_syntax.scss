@@ -6,17 +6,24 @@ div.highlighter-rouge,
 figure.highlight {
   position: relative;
   margin-bottom: 1em;
-  background: $base00;
   color: $base05;
   font-family: $monospace;
   font-size: $type-size-6;
   line-height: 1.8;
   border-radius: $border-radius;
+  max-width: 100%;
+  // display: flex;
+  // justify-content: center;
 
   > pre,
   pre.highlight {
-    margin: 0;
-    padding: 1em;
+    border: 2px solid mix($border-color, $code-background-color, 20%);
+    border-radius: $border-radius;
+    margin: auto;
+    padding: 0.3em;
+    width: min-content;
+    max-width: 100%;
+    background-color: $base00;
   }
 }
 
