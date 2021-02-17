@@ -18,8 +18,10 @@ table {
 }
 
 thead {
-  background-color: $border-color;
-  border-bottom: 2px solid mix(#000, $border-color, 25%);
+  background-color: $color5;
+  border-bottom: 2px solid mix(#000, $color5, 25%);
+  border-radius: 4px;
+  color: $background-color;
 }
 
 th {
@@ -30,7 +32,8 @@ th {
 
 td {
   padding: 0.5em;
-  border-bottom: 1px solid mix(#000, $border-color, 25%);
+  border: 2px solid mix(#000, $border-color, 25%);
+  background-color: mix($color5, $background-color, 40%);
 }
 
 tr,
