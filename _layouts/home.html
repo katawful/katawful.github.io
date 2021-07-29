@@ -1,12 +1,8 @@
----
-layout: default
----
 <div class="home">
+  {%- include header.html -%}
   <!-- print the page title -->
   <!-- now why does it look like this? -->
-  {% if page.title %}
-    <h1 class="page.heading">{{ page.title }}</h1>
-  {% endif %}
+    <h1 class="page.heading">{{ site.title }}</h1>
 
     <!-- post the content -->
   {{ content }}
