@@ -1,10 +1,13 @@
+---
+layout: default
+---
 <div class="home">
   {%- include header.html -%}
   <!-- print the page title -->
   <!-- now why does it look like this? -->
-    <h1 class="page.heading">{{ site.title }}</h1>
+  <h1 class="page.heading">{{ site.title }}</h1>
 
-    <!-- post the content -->
+  <!-- post the content -->
   {{ content }}
 
   <h2 class="post-list-heading">{{ page.list_title | default: "Latest Post" }}</h2>
