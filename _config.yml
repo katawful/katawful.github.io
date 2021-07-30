@@ -29,9 +29,9 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  katawful
 
 # Build settings
-# theme: minima
-plugins:
-  - jekyll-feed
+# theme: kat
+# plugins:
+#   - jekyll-feed
 
 # Sass stuff
 sass:
