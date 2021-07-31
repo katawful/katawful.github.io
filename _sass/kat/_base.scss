@@ -10,6 +10,8 @@ body {
   font-kerning: normal;
   display: flex;
   min-height: 100vh;
+  max-width: 1000px;
+  margin: auto;
   flex-direction: column;
 }
 html {
@@ -27,7 +29,21 @@ html {
   flex-direction: column;
 }
 
-h1.page.heading {
+.category_structure {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto 2em;
+  background-color: white;
+  color: black;
+  border: 2px;
+  border-color: white;
+}
+
+p {
+  padding: 0.25em;
+}
+
+.page_heading {
   color: white;
-  font-size: 30px;
+  font-size: 50px;
 }

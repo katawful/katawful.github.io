@@ -4,17 +4,46 @@ layout: default
 <div class="home">
   <!-- print the page title -->
   <!-- now why does it look like this? -->
-  <h1 class="page.heading">{{ site.title }}</h1>
+  <h1 class="page_heading">{{ site.title }}</h1>
 
-  <!-- post the content -->
+  <!-- post whatever content is in index file -->
   {{ content }}
 
   <div class="latest_post">
     <h2 class="post-list-heading">Latest Post</h2>
     {% for post in site.posts %}
-      <!--get the lastest post-->
+
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
       {{ post.excerpt }}
+        <!-- I broke early to mimick doing post[0] -->
+        <!-- simple but works -->
+      {% break %}
+
+    {% endfor %}
+  </div>
+
+  <div class="category_structure">
+    {% for post in site.categories %}
+      <div class="category_{{ post[0] }}" style="margin:1em 1em;background-color:grey;">
+        {% assign main_cat = post[0] %}
+        <h2>Latest Post in {{ main_cat }}</h2>
+        <!-- get a post with the right category -->
+        {% for nest_post in site.posts reversed %}
+          <!-- for each category in a post -->
+          {% for nest_cat in nest_post.categories %}
+            <!-- if that category matches our main one -->
+            <!-- print that post -->
+            <!-- and only that post -->
+            {% if nest_cat == main_cat %}
+              {% assign title = nest_post.title %}
+              {% assign excerpt = nest_post.excerpt %}
+              <!-- {{ nest_post.excerpt }} -->
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+        <div class="category_title" style="padding:0.25em;"> {{ title }}</div>
+        <div class="category_excerpt"> {{ excerpt }}</div>
+      </div>
     {% endfor %}
   </div>
 
