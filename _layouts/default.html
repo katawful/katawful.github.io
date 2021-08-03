@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+  {%- include header.html -%}
+  {%- include sidebar.html -%}
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 
-  {%- include header.html -%}
   <body>
     <div class="wrapper"/>
       {{ content }}
