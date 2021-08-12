@@ -28,6 +28,23 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  katawful
 
+author:
+  name     : "Kat"
+  avatar   : "/assets/images/my-pfp.png"
+  bio      : "Weird trans/NB nerd that loves talking about Oblivion, Linux things, and art posting."
+  location : "USA, regrettably"
+  github: "katawful"
+  youtube:
+    - channel: "Wood Nerding"
+      url: "https://youtube.com/channel/UCSkKqmLx8HkpktRqlapbO2Q"
+    - channel: "Gender Ender"
+      url: "https://www.youtube.com/channel/UCS7DVUhMMyumSC4BZACMrNw"
+  instagram: "woodnerding"
+  twitch: "enderofgender"
+  nexus:
+    account: "katawful"
+    url: "https://www.nexusmods.com/users/66104901"
+
 # Build settings
 # theme: kat
 # plugins:

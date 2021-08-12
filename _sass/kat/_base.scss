@@ -40,7 +40,7 @@ html {
   padding: 0.5em;
   background-color: grey;
   color: black;
-  top: $header-height;
+  top: 0;
   position: sticky;
   overflow: auto;
 }
@@ -57,7 +57,7 @@ html {
     width: 10em;
     left: calc(#{$content-width} * 0.12);
     top: $header-height;
-    top: calc(#{$header-height} + 10vh);
+    // top: calc(#{$header-height} + 1em);
     background-color: grey;
     color: black;
     position: fixed;

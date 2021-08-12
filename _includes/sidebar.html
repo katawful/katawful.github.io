@@ -1,4 +1,10 @@
 <!-- this is the sidebar for shit -->
-<div class="sidebar">
-  this is content
-</div>
+<!-- if the page or layout has an author profile, or a sidebar -->
+{%- if page.author_profile or layout.author_profile or page.sidebar -%}
+  <div class="sidebar">
+    <!-- include author profile if there -->
+    {%- if page.author_profile or layout.author_profile -%}
+      {%- include author_profile.html -%}
+    {%- endif -%}
+  </div>
+{%- endif -%}

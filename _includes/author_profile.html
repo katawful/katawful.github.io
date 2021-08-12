@@ -1,0 +1,49 @@
+<!-- assign variable to hold author shit -->
+{% assign author = page.author | default: page.authors[0] | default: site.author %}
+{% assign author = site.data.authors[author] | default: author %}
+
+<!-- create profile using proper schema -->
+<div itemscope itemtype="https://scheme.org/Person">
+  <!-- get author avatar -->
+  {%- if author.avatar -%}
+    <div class="author_avatar">
+      {% comment %} show pic of it {% endcomment %}
+      <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image" style="width:100px">
+    </div>
+  {%- endif -%}
+
+  {% comment %} get author name and bio {% endcomment %}
+  {%- if author.name -%}
+    <div class="author_content">
+      <h3 class="author_name" itemprop="name">{{ author.name }}</h3>
+      {%- if author.bio -%}
+      <div class="author_bio" itemprop="description">
+        {{ author.bio | markdownify }}
+      </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  {% comment %} parse through _config.yml links {% endcomment %}
+  {% comment %} i don't think i need to do this??? {% endcomment %}
+  <div class="author_urls">
+    <ul class="social-icons">
+
+      {%- if author.location -%}
+      <li itemprop="homeLocation" itemscope itemtype="https://scheme.org/Place">
+        <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">{{ author.location }}</span>
+      </li>
+      {%- endif -%}
+
+      {%- if author.github -%}
+      <li>
+        <a href="https://github.com/{{ author.github }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <i class="fab fa-fw fa-github" aria-hidden="true"></i> Github
+        </a>
+      </li>
+      {%- endif -%}
+
+    </ul>
+  </div>
+
+</div>
