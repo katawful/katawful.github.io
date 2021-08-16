@@ -1,0 +1,11 @@
+# main links
+main:
+  - title: "Blog"
+    description: "My ramblings"
+    url: /blog/
+  - title: "Portfolio"
+    url: /portfolio/
+    description: "My art"
+  - title: "About"
+    url: /about/
+    description: "About"
