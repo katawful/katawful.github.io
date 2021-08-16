@@ -3,7 +3,7 @@
 {% assign author = site.data.authors[author] | default: author %}
 
 <!-- create profile using proper schema -->
-<div itemscope itemtype="https://scheme.org/Person">
+<div class="author_profile" itemscope itemtype="https://scheme.org/Person">
   <!-- get author avatar -->
   {%- if author.avatar -%}
     <div class="author_avatar">

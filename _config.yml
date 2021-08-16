@@ -45,6 +45,10 @@ author:
     account: "katawful"
     url: "https://www.nexusmods.com/users/66104901"
 
+# include folders
+include:
+  - "_pages"
+
 # Build settings
 # theme: kat
 # plugins:

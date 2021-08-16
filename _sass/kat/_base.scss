@@ -8,62 +8,26 @@ body {
        -o-font-feature-settings: "kern" 1;
           font-feature-settings: "kern" 1;
   font-kerning: normal;
-  display: flex;
   min-height: 100vh;
-  max-width: $content-width;
   margin: auto;
   flex-direction: column;
 }
-html {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: white;
-  background-color: black;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern" 1;
-     -moz-font-feature-settings: "kern" 1;
-       -o-font-feature-settings: "kern" 1;
-          font-feature-settings: "kern" 1;
-  padding: 0.25em;
-  font-kerning: normal;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
 
-// this comes from default.html
-.wrapper {
+#main {
+  float: left;
+  position: relative;
   max-width: $content-width;
+  margin: auto;
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
 
-.sidebar {
-  margin: 0;
-  padding: 0.5em;
-  background-color: grey;
-  color: black;
-  top: 0;
-  position: sticky;
-  overflow: auto;
-}
-@media screen and (min-width: 800px) {
-  .wrapper {
-    max-width: $content-width;
-    position: relative;
-    // left: 10em;
-    margin: auto;
+.content {
+  // 2 from border margins, 13 for right sidebar
+  @media screen and (max-width: $medium) {
+    max-width: 100%
   }
-  .sidebar {
-    margin: auto;
-    padding: 0;
-    width: 10em;
-    left: calc(#{$content-width} * 0.12);
-    top: $header-height;
-    // top: calc(#{$header-height} + 1em);
-    background-color: grey;
-    color: black;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-  }
+  max-width: 85vw;
 }
 
 .category_structure {

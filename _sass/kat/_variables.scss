@@ -16,5 +16,18 @@ $h5-font-size: $base-font-size * 1.25 !default;
 $h6-font-size: $base-font-size * 1.1 !default;
 
 // sizes
-$content-width: 1200px;
+$large: 1600px;
+$medium: 1100px;
+$small: 800px;
+$phone: 600px;
+$content-width: $large;
+@media screen and (min-width: 1100px) {
+  $content-width: $medium;
+}
+@media screen and (min-width: 800px) {
+  $content-width: $small;
+}
+@media screen and (min-width: 600px) {
+  $content-width: $phone;
+}
 $header-height: 4em;

@@ -1,19 +1,15 @@
 ---
-author_profile: true
-sidebar: true
 ---
 <!DOCTYPE html>
 <!-- load font awesome using JS -->
 <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+<link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 <meta name="viewport" content="width=device-width,initial-scale=1">
   {%- include header.html -%}
-  {%- include sidebar.html -%}
+  {% comment %} {%- include sidebar.html -%} {% endcomment %}
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 
   <body>
-    <div class="wrapper"/>
       {{ content }}
-    </div>
   </body>
 </html>

@@ -1,5 +1,7 @@
 ---
 layout: home
+author_profile: true
+sidebar: true
 ---
 
 this is content
