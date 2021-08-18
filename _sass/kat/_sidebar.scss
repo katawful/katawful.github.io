@@ -4,8 +4,8 @@
   background-color: grey;
   color: black;
   top: 0;
-  // position: sticky;
   overflow-y: auto;
+  z-index: 10;
 }
 @media screen and (min-width: 800px) {
   .sidebar {
@@ -15,12 +15,38 @@
     width: 13vw;
     background-color: grey;
     color: black;
-    height: 100%;
+    // height: 95vh;
     margin-right: 1vw;
   }
 }
 
-.author_content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.author_name {
+  margin: 0;
+  padding: 0;
+}
+.author_bio {
+  margin: 0;
+  padding: 0;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+.author_avatar {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 100px;
+    border: 2px solid;
+    border-radius: 50%;
+    border-color: black;
+    padding: 2px;
+    display: block;
+  }
+}
+
+ul,.social_icons {
+  list-style: none;
+  margin: 0;
+  padding: 1em 0;
 }

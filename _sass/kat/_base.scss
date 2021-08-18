@@ -14,8 +14,8 @@ body {
 }
 
 #main {
-  float: left;
-  position: relative;
+  // float: left;
+  // position: relative;
   max-width: $content-width;
   margin: auto;
   margin-left: 2vw;
@@ -25,17 +25,23 @@ body {
 .content {
   // 2 from border margins, 13 for right sidebar
   @media screen and (max-width: $medium) {
-    max-width: 100%
+    max-width: 100%;
+    position: relative;
   }
   max-width: 85vw;
+  position: relative;
 }
 
 .category_structure {
   display: grid;
   margin: auto 0.25em;
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: $medium) {
     grid-template-columns: 1fr 1fr 1fr;
     margin: auto 2em;
+    display: grid;
+    position: relative;
+    left: 13vw;
+    width: 70vw;
   }
   background-color: white;
   color: black;
