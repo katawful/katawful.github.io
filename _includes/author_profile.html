@@ -27,7 +27,8 @@
   {% comment %} parse through _config.yml links {% endcomment %}
   {% comment %} i don't think i need to do this??? {% endcomment %}
   <div class="author_urls">
-    <ul class="social-icons">
+    <button class="follow_button">Follow</button>
+    <ul class="social_icons--active">
 
       {%- if author.location -%}
       <li itemprop="homeLocation" itemscope itemtype="https://scheme.org/Place">
@@ -81,4 +82,5 @@
     </ul>
   </div>
 
+  <script src="{{ '/assets/js/sidebar.js' | relative_url }}"></script>
 </div>
