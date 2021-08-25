@@ -9,7 +9,9 @@
   {% comment %} {%- include sidebar.html -%} {% endcomment %}
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-  <body>
-      {{ content }}
-  </body>
+  <div class="initial_content">
+    <body>
+        {{ content }}
+    </body>
+  </div>
 </html>

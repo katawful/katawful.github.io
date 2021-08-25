@@ -27,7 +27,7 @@ layout: default
 
     <div class="category_structure">
       {% for post in site.categories %}
-        <div class="category_{{ post[0] }}" style="margin:0.25em 0.25em;background-color:grey;">
+        <div class="category_{{ post[0] }}">
           {% assign main_cat = post[0] %}
         <div class="latest_post"> <h3>Latest Post in {{ main_cat }}</h3></div>
           <!-- get a post with the right category -->
@@ -45,7 +45,7 @@ layout: default
             {% endfor %}
           {% endfor %}
           <!-- we needed to print the collected post right before the next category -->
-          <div class="category_title" style="padding:0.25em;"> {{ title }}</div>
+          <div class="category_title"> {{ title }}</div>
           <div class="category_excerpt"> {{ excerpt }}</div>
         </div>
       {% endfor %}
