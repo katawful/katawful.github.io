@@ -1,20 +1,21 @@
 // preprocessor shit
 
-code {
-  background-color: mix($color0, $color8, 20%);
-  color: $color7;
-  padding: 0.1rem;
+code.language-plaintext.highlighter-rouge {
+  background-color: $background_2;
+  color: $foreground;
+  padding: 0.05rem;
+  border: 2px solid $border_color;
   border-radius: $border-radius;
 }
 
 .highlight {
-  border: 2px solid mix($color0, $color7, 20%);
+  border: 3px solid $border_color;
   border-radius: $border-radius;
   margin: auto;
   padding: 0.3em;
   width: min-content;
   max-width: 100%;
-  background-color: mix($color0, $color8, 20%);
+  background-color: $background_1;
   .c {
     /* Comment */
     color: $color4;

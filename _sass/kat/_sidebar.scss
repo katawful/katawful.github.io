@@ -1,11 +1,11 @@
 .sidebar {
   margin: 0;
   padding: 0.5em;
-  background-color: grey;
-  color: black;
+  color: $foreground;
   top: 0;
   overflow-y: auto;
   z-index: 10;
+  opacity: 0.80;
 }
 @media screen and (min-width: #{$medium}) {
   .sidebar {
@@ -14,8 +14,7 @@
     top: 0;
     float: left;
     width: 13vw;
-    background-color: grey;
-    color: black;
+    color: $foreground;
     height: 100vh;
     margin-right: 1vw;
   }
@@ -52,9 +51,15 @@ ul,.social_icons--active {
   margin: 0.1em 0;
   padding: 0.5em;
   position: absolute;
-  background: white;
+  background: $background;
+  border: 4px solid $border_color;
+  border-radius: $border-radius;
   z-index: 10;
   list-style: none;
+  a {
+    color: $foreground;
+    text-decoration: none;
+  }
 }
 ul,.social_icons--inactive {
   display: none;
@@ -71,6 +76,7 @@ ul,.social_icons--inactive {
     margin: 8px;
     padding: 1em 0;
     background: none;
+    border: none;
   }
   ul,.social_icons--inactive {
     display: none;

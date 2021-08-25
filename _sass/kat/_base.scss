@@ -1,7 +1,7 @@
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: white;
-  background-color: darkslategray;
+  color: $foreground;
+  background-color: $background;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
      -moz-font-feature-settings: "kern" 1;
@@ -42,10 +42,23 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     display: grid;
   }
-  background-color: white;
-  color: black;
+  background-color: $foreground_5;
+  color: $background;
   border: 2px;
-  border-color: white;
+  border-color: $border_color;
+  border-radius: $border-radius;
+  div[class^="category_"] {
+    background: $background_1;
+    margin: 0.2em;
+    color: $foreground;
+    border: 4px solid $border_color;
+    .category_title {
+      border: none;
+    }
+    .category_excerpt {
+      border: none;
+    }
+  }
 }
 .category_title {
   font-size: $h4-font-size;
@@ -59,8 +72,8 @@ body {
 }
 
 .page_heading {
-  color: white;
-  background-color: black;
+  color: $background_5;
+  background-color: $foreground_5;
   font-size: $h1-font-size;
   padding: 0.5em;
 }
@@ -86,4 +99,15 @@ h5 {
 }
 h6 {
   font-size: $h6-font-size;
+}
+
+a {
+  &:visited {
+    color: $green_dull;
+  }
+
+  &:hover {
+    color: $green_bright;
+    outline: 0;
+  }
 }
