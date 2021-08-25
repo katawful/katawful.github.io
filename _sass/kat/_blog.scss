@@ -1,6 +1,15 @@
 // blog page layout
 
 article.page {
-  width: 65vw;
   float: left;
+  background: $background_1;
+  border: 2px solid $border_color;
+  border-radius: $border-radius;
+}
+@media screen and (min-width: #{$medium}) {
+  article.page {
+    width: 65vw;
+    top: 2em;
+    position: relative;
+  }
 }

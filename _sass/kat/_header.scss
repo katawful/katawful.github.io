@@ -2,7 +2,8 @@
 
 header {
   display: flex;
-  background: grey;
+  background: $background_1;
+  border-bottom: 2px solid $foreground;
 }
 
 .header_wrapper {
@@ -18,6 +19,11 @@ header {
 
 .site-title {
   font-size: $h4-font-size;
+}
+
+.site-link_list > a {
+  color: $pink;
+  text-decoration: none;
 }
 
 .header_wrapper > nav {
