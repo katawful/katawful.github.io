@@ -1,15 +1,17 @@
 <header class="site-header" role="banner">
   {% comment %} I need a way to parse links {% endcomment %}
   {% comment %} get from _data? {% endcomment %}
-  <div class="site-title">
-    {{ site.title }}
+  <div class="header_wrapper">
+    <div class="site-title">
+      {{ site.title }}
+    </div>
+    <nav class="site-links">
+      {%- for link in site.data.navigation.main -%}
+        {% comment %} print each link {% endcomment %}
+        <li class="site-link_list">
+          <a href="{{ link.url | relative_url }}" title="{{ link.description }}">{{ link.title }}</a>
+        </li>
+      {%- endfor -%}
+    </nav>
   </div>
-  <nav class="site-links">
-    {%- for link in site.data.navigation.main -%}
-      {% comment %} print each link {% endcomment %}
-      <li class="site-link_list">
-        <a href="{{ link.url | relative_url }}" title="{{ link.description }}">{{ link.title }}</a>
-      </li>
-    {%- endfor -%}
-  </nav>
 </header>

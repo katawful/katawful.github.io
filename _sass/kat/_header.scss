@@ -1,0 +1,29 @@
+// site header CSS
+
+header {
+  display: flex;
+  background: grey;
+}
+
+.header_wrapper {
+  display: flex;
+  max-width: $large;
+  float: left;
+  width: 100%;
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.site-title {
+  font-size: $h4-font-size;
+}
+
+.header_wrapper > nav {
+  margin-left: auto;
+}
+.header_wrapper > nav > li {
+  padding: 0 0.2em;
+  display: inline-block;
+}
