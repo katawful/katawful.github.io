@@ -11,18 +11,18 @@ const buttonClick = function() {
   let authorClass = authorURLS.getAttribute('class');
   if (authorClass == "social_icons--inactive") {
     authorURLS.setAttribute('class', 'social_icons--active');
-    console.log('set active');
   } else if (authorClass == "social_icons--active") {
-    console.log('set inactive');
     authorURLS.setAttribute('class', 'social_icons--inactive');
   }
 }
 
+// the button.follow_button class in author_urls
 followButton.addEventListener('click', function(event) {
   buttonClick();
 });
 
 const checkWidth = function() {
+  // if our screen is small, make sure the follow links aren't visible
   if (screenWidth <= 1100) {
     authorURLS.setAttribute('class', 'social_icons--inactive');
   }
