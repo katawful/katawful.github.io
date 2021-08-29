@@ -17,8 +17,10 @@ header {
 }
 
 
-.site-title {
+.site-title > a {
   font-size: $h4-font-size;
+  color: $foreground;
+  text-decoration: none;
 }
 
 .site-link_list > a {
