@@ -1,0 +1,17 @@
+{% capture hero_img_path %}{{ page.header | relative_url }}{% endcapture %}
+{% capture overlay_img_path %}{{ page.header.overlay_image | relative_url }}{% endcapture %}
+
+{%- if page.header -%}
+  {%- assign hero_class = "page_hero--overlay" -%}
+{%- else -%}
+  {%- assign hero_class = "page_hero" -%}
+{%- endif -%}
+
+
+<div class="{{ hero_class }}" style="background-image: url('{{ hero_img_path }}');">
+  {% comment %} <img class="background" src="{{ hero_img_path }}" height="250"></img> {% endcomment %}
+  <div class="hero_wrapper">
+    <h1 class="page_title" itemprop="headline">{{ page.title }}</h1>
+    <p class="page_info">{{ page.excerpt }}</p>
+  </div>
+</div>

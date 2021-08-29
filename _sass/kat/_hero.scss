@@ -1,0 +1,22 @@
+// this if for the page hero overlay
+
+.page_hero--overlay {
+  margin: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 3em 0;
+}
+
+.hero_wrapper {
+  max-width: $content-width;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  text-shadow: 3px 3px 4px $background
+}
+@media screen and (min-width: #{$medium}) {
+  .hero_wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
