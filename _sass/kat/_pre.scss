@@ -1,21 +1,34 @@
 // preprocessor shit
 
-code.language-plaintext.highlighter-rouge {
+code.language-plaintext.highlighter-rouge, {
   background-color: $background_2;
   color: $foreground;
   padding: 0.05rem;
   border: 2px solid $border_color;
   border-radius: $border-radius;
+  overflow: auto;
+  padding: 0.25em;
+}
+code {
+  color: $pink;
+  padding: 0.25em;
+}
+.language-plaintext.highlighter-rouge {
+  overflow: auto;
+  padding: 0.25em;
 }
 
-.highlight {
+pre.highlight, figure.highlight {
   border: 3px solid $border_color;
   border-radius: $border-radius;
   margin: auto;
-  padding: 0.3em;
-  width: min-content;
+  padding: 0.25em;
   max-width: 100%;
-  background-color: $background_1;
+  background-color: $background;
+  overflow: auto;
+  @media screen and (min-width: #{$medium}) {
+    width: min-content;
+  }
   .c {
     /* Comment */
     color: $color4;

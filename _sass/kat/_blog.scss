@@ -1,7 +1,6 @@
 // blog page layout
 
 article.page_inner {
-  float: left;
   background: $background_1;
   border: 2px solid $border_color;
   border-radius: $border-radius;
@@ -9,11 +8,41 @@ article.page_inner {
 @media screen and (min-width: #{$medium}) {
   article.page_inner {
     width: 65vw;
-    top: 2em;
-    position: relative;
-  }
-  .page {
-    padding: 0.25em;
+    float: left;
   }
 }
 
+.page {
+  padding: 0.25em;
+}
+
+table {
+  table-layout: fixed;
+  // border-collapse: collapse;
+  margin: auto;
+  background: $background;
+  border: 2px solid $border_color;
+  border-radius: $border-radius;
+  text-align: center;
+  @media screen and (min-width: #{$medium}) {
+    max-width: 50%;
+  }
+
+  thead, tfoot {
+    padding: 0 0.1em;
+    text-align: center;
+    background: $background;
+    padding: 0.1em;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: $foreground_4;
+    color: $background;
+    padding: 0.1em;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: $background_4;
+    color: $foreground;
+    padding: 0.1em;
+  }
+}

@@ -19,7 +19,7 @@ header: /assets/images/generic-header.jpg
       {% for post in site.posts %}
 
         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        {{ post.excerpt }}
+        <h6>{{ post.excerpt }}</h6>
           <!-- I broke early to mimick doing post[0] -->
           <!-- simple but works -->
         {% break %}
@@ -31,7 +31,7 @@ header: /assets/images/generic-header.jpg
       {% for post in site.categories %}
         <div class="category_{{ post[0] }}">
           {% assign main_cat = post[0] %}
-        <div class="latest_post"> <h3>Latest Post in {{ main_cat }}</h3></div>
+          <div class="latest_post"> <h3>Latest Post in <em>{{ main_cat }}</em></h3></div>
           <!-- get a post with the right category -->
           {% for nest_post in site.posts reversed %}
             <!-- for each category in a post -->
@@ -42,12 +42,13 @@ header: /assets/images/generic-header.jpg
               {% if nest_cat == main_cat %}
                 {% assign title = nest_post.title %}
                 {% assign excerpt = nest_post.excerpt %}
-                <!-- {{ nest_post.excerpt }} -->
+                {%- assign url = nest_post.url -%}
+                {% comment %} <!-- {{ nest_post.excerpt }} --> {% endcomment %}
               {% endif %}
             {% endfor %}
           {% endfor %}
           <!-- we needed to print the collected post right before the next category -->
-          <div class="category_title"> {{ title }}</div>
+          <div class="category_title"> <a href="{{ url | relative_url }}">{{ title }}</a></div>
           <div class="category_excerpt"> {{ excerpt }}</div>
         </div>
       {% endfor %}
