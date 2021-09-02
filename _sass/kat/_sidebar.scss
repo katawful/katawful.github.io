@@ -46,7 +46,7 @@
 }
 
 // for small screeens
-ul,.social_icons--active {
+ul.social_icons--active {
   display: block;
   margin: 0.1em 0;
   padding: 0.5em;
@@ -61,7 +61,7 @@ ul,.social_icons--active {
     text-decoration: none;
   }
 }
-ul,.social_icons--inactive {
+ul.social_icons--inactive {
   display: none;
 }
 
@@ -70,7 +70,7 @@ ul,.social_icons--inactive {
   .follow_button {
     display: none;
   }
-  ul,.social_icons--active {
+  ul.social_icons--active {
     display: list-item;
     list-style: none;
     margin: 8px;
@@ -78,7 +78,7 @@ ul,.social_icons--inactive {
     background: none;
     border: none;
   }
-  ul,.social_icons--inactive {
+  ul.social_icons--inactive {
     display: none;
   }
 }
