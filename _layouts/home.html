@@ -19,7 +19,11 @@ header: /assets/images/generic-header.jpg
       {% for post in site.posts %}
 
         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <h6>{{ post.excerpt }}</h6>
+        <div class="excerpt">
+          <h4>Excerpt:</h4>
+          {{ post.excerpt }}
+        </div>
+        <img src="{{post.teaser}}" alt="Header">
           <!-- I broke early to mimick doing post[0] -->
           <!-- simple but works -->
         {% break %}

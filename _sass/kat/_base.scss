@@ -27,6 +27,18 @@ body {
   }
 }
 
+.plain_content {
+  background: $background_1;
+  border: 2px solid $border_color;
+  border-radius: $border-radius;
+}
+@media screen and (min-width: #{$medium}) {
+  .plain_content {
+    width: 65vw;
+    float: left;
+  }
+}
+
 .content {
   // 2 from border margins, 13 for right sidebar
   @media screen and (max-width: #{$medium}) {
@@ -42,6 +54,23 @@ body {
   background: $background_1;
   border: 2px solid $border_color;
   border-radius: $border-radius;
+  h4 {
+    margin: 0;
+  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: #{$medium}) {
+    display: inherit;
+  }
+  img {
+    max-width: 75%;
+    border: 2px solid $border_color;
+    border-radius: $border-radius;
+  }
+}
+
+.excerpt {
+  font-size: $base-font-size;
 }
 
 .category_structure {

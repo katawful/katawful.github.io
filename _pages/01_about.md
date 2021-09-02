@@ -1,7 +1,10 @@
 ---
-layout: default
+layout: single
 title: About
 permalink: /about/
+sidebar: true
+author_profile: true
+header: /assets/images/generic-header.jpg
 ---
 
 Hi, I'm Kat (not KatKat the Russian modder).
