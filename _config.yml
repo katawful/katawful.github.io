@@ -39,6 +39,7 @@ defaults:
           values:
                 layout: "blog"
                 header: /assets/images/generic-header.jpg
+                teaser: /assets/images/generic-image.png
                 social: true
                 permalink: /:categories/:title
                 read_time: true

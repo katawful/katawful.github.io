@@ -12,6 +12,43 @@ article.page_inner {
   }
 }
 
+.page_inner {
+  background: $background_1;
+  border: 2px solid $border_color;
+  border-radius: $border-radius;
+  padding: 0.25em;
+  .Posts {
+    padding: 0.5em;
+    background: $background_3;
+    margin: 1em 0;
+    border: 2px solid $border_color;
+    border-radius: $border-radius;
+
+    .box {
+      display: flex;
+      background: $background_4;
+      border-radius: $border-radius;
+      align-items: center;
+      text-shadow: 3px 3px 4px $background;
+      img {
+        margin-right: 1em;
+        max-height: 10vh;
+        border-radius: $border-radius;
+      }
+    }
+    h2 {
+      margin: 0.1em 0;
+      line-height: 1.1;
+    }
+  }
+}
+@media screen and (min-width: #{$medium}) {
+  .page_inner {
+    width: 65vw;
+    float: left;
+  }
+}
+
 .page {
   padding: 0.25em;
 }
