@@ -39,11 +39,10 @@ defaults:
           values:
                 layout: "blog"
                 header: /assets/images/generic-header.jpg
-                teaser: /assets/images/generic-image.png
+                teaser: /assets/images/teaser-image.png
                 social: true
                 permalink: /:categories/:title
                 read_time: true
                 related: true
                 author_profile: true
-                sidebar:
-                        nav: "sidebar"
+                sidebar: true

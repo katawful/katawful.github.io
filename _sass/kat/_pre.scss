@@ -12,6 +12,10 @@ code.language-plaintext.highlighter-rouge, {
 code {
   color: $pink;
   padding: 0.25em;
+  background-color: $background;
+  border-radius: $border-radius;
+  overflow: auto;
+  padding: 0.05em;
 }
 .language-plaintext.highlighter-rouge {
   overflow: auto;
@@ -26,8 +30,11 @@ pre.highlight, figure.highlight {
   max-width: 100%;
   background-color: $background;
   overflow: auto;
+  code {
+    margin: 0 1em;
+  }
   @media screen and (min-width: #{$medium}) {
-    width: min-content;
+    // width: min-content;
   }
   .c {
     /* Comment */
@@ -194,7 +201,7 @@ pre.highlight, figure.highlight {
   }
   .nv {
     /* Name.Variable */
-    color: $color8;
+    color: $color7;
   }
   .ow {
     /* Operator.Word */

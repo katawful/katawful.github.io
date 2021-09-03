@@ -30,6 +30,7 @@ article.page_inner {
       border-radius: $border-radius;
       align-items: center;
       text-shadow: 3px 3px 4px $background;
+      overflow: auto;
       img {
         margin-right: 1em;
         max-height: 10vh;

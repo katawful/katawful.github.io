@@ -1,0 +1,34 @@
+---
+title: "Robins Galore, I Adore"
+excerpt: "Just a bunch of robins doing their thing, they're very funny birds."
+date: 2020-08-02 12:00:00 -0400
+header:
+     teaser: /assets/images/portfolio/robins/robin1.jpg
+     overlay_image: /assets/images/portfolio/robins/robins4.jpg
+gallery:
+   - url: /assets/images/portfolio/robins/robin1.jpg
+     image_path: /assets/images/portfolio/robins/robin1.jpg
+     alt: "Hanging in a tree"
+     title: "Looking around"
+   - url: /assets/images/portfolio/robins/robin2.jpg
+     image_path: /assets/images/portfolio/robins/robin2.jpg
+     alt: "Hidden away"
+     title: "Hidden away in a tree"
+   - url: /assets/images/portfolio/robins/robins3.jpg
+     image_path: /assets/images/portfolio/robins/robins3.jpg
+     alt: "Staring me down"
+     title: "Staring me down, what will it do?"
+   - url: /assets/images/portfolio/robins/robins4.jpg
+     image_path: /assets/images/portfolio/robins/robins4.jpg
+     alt: "Searching for food"
+     title: "Searching for food, what will it find"
+entries_layout: grid
+categories: photography
+---
+## Robins doing their **thing**
+Robins are super silly and they're very plentiful around me!
+They're super active birds and a lot of them are quite the adventurous and daring, allowing me to get close up pictures relatively easy.
+Plus the way they search for food makes them wonderful models.
+They tend to stand still for a bit every once in a while.
+
+{% include gallery caption="Robins galore" %}
