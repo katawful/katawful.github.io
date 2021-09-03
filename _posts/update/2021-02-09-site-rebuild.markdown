@@ -5,10 +5,7 @@ date:   2021-09-02 12:00:00 -0400
 excerpt: Quick rundown of my new site rebuild
 teaser: /assets/images/teaser-image.png
 header: /assets/images/header-image.jpg
-categories: update
-tags:
-  - wine
-  - oblivion
+categories: updates
 ---
 
 # Background
