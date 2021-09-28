@@ -30,9 +30,9 @@ pre.highlight, figure.highlight {
   max-width: 100%;
   background-color: $background;
   overflow: auto;
-  code {
-    margin: 0 1em;
-  }
+  // code {
+  //   margin: 0 1em;
+  // }
   @media screen and (min-width: #{$medium}) {
     // width: min-content;
   }
